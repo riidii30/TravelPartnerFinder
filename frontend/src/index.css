@@ -1,0 +1,291 @@
+/* =========================================
+   GLOBAL STYLES
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg,
+      #f8fafc,
+      #eef2ff);
+
+  color: var(--text);
+  font-family: Inter, sans-serif;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero-section {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  background: rgba(255, 255, 255, 0.75);
+
+  backdrop-filter: blur(20px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow:
+    0 8px 32px rgba(31, 38, 135, 0.1);
+  z-index: 1000;
+  position: relative;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 14px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-success {
+  background: var(--primary);
+  border: none;
+  color: white;
+}
+
+.btn-success:hover {
+  background: var(--primary-dark);
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.card {
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.12);
+
+  border-color:
+    rgba(99, 102, 241, 0.2);
+}
+
+/* =========================================
+   CARD IMAGES
+========================================= */
+
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+
+.card img {
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.discover-search {
+  border-radius: 16px;
+  border: none;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+   HERO IMAGE
+========================================= */
+
+.hero-image {
+  margin-left: 60px;
+
+  width: 100%;
+  max-width: 650px;
+  height: 600px;
+
+  object-fit: cover;
+  border-radius: 32px;
+
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.15);
+
+  animation:
+    floatImage 4s ease-in-out infinite;
+
+  transition:
+    transform 0.6s ease,
+    box-shadow 0.6s ease;
+  z-index: 1 !important;
+}
+
+.hero-image:hover {
+  transform:
+    translateY(-10px) scale(1.03);
+
+  box-shadow:
+    0 35px 70px rgba(0, 0, 0, 0.22);
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   PAGE ENTRY ANIMATION
+========================================= */
+
+.page-container {
+  animation:
+    fadeInUp 0.7s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform:
+      translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+}
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body.dark-mode {
+  background: #121212 !important;
+  color: white;
+}
+
+body.dark-mode .navbar {
+  background:
+    rgba(26, 26, 26, 0.85) !important;
+
+  backdrop-filter: blur(20px);
+}
+
+body.dark-mode .card {
+  background: #1e1e1e;
+  color: white;
+}
+
+body.dark-mode a {
+  color: white !important;
+}
+
+body.dark-mode .text-muted {
+  color: #bdbdbd !important;
+}
+
+/* Avatar Dropdown */
+
+.dropdown-menu {
+  min-width: 180px !important;
+  padding: 10px 0 !important;
+  overflow: visible !important;
+  z-index: 99999 !important;
+}
+
+.dropdown-item {
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.dropdown-item:hover {
+  background: #f8f9fa;
+}
+
+.dropdown {
+  position: relative;
+}
+
+/* =========================================
+   CREATE TRIP PAGE BUTTONS
+========================================= */
+
+.ai-plan-btn {
+  background: white;
+  border: 2px solid #A8C3B0;
+  color: #6b8f74;
+  border-radius: 14px;
+  font-weight: 600;
+  padding: 12px;
+}
+
+.ai-plan-btn:hover {
+  background: #f4faf6;
+  transform: translateY(-2px);
+}
+
+.create-trip-btn {
+  background: #A8C3B0;
+  border: none;
+  color: white;
+  border-radius: 14px;
+  font-weight: 600;
+  padding: 12px;
+}
+
+.create-trip-btn:hover {
+  background: #95b39d;
+  transform: translateY(-2px);
+}
